@@ -5,10 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "serve webroot --no-clipboard",
     "lint": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
-    "build:icons": "tsc -b src/iconify-bundle && node src/iconify-bundle/bundle-icons-react.js"
+    "build:icons": "tsc -b src/iconify-bundle && node src/iconify-bundle/bundle-icons-react.js",
+    "test": "node --test tests/static-export-start.test.mjs"
   },
   "dependencies": {
     "@capacitor/core": "^6.2.0",
@@ -86,7 +87,8 @@
     "stylis-plugin-rtl": "2.1.1",
     "yarn": "^1.22.22",
     "yup": "0.32.11",
-    "yup-locales": "^1.2.12"
+    "yup-locales": "^1.2.12",
+    "serve": "14.2.6"
   },
   "devDependencies": {
     "@iconify/iconify": "3.0.0",
